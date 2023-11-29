@@ -7,15 +7,15 @@ int main()
 
       // AAccess the ith element
       cout << v[2] << endl // 30
-           << v.at(1);     // 20
+           << v.at(1);     // 20 --> O(1)
 
       // Access the first element
       cout << v[0] << endl // 10
-           << v.front();   // 10
+           << v.front();   // 10 --> O(1)
 
       // Access the last element
       cout << v[v.size() - 1] << endl // 50
-           << v.back();               // 50
+           << v.back();               // 50 --> O(1)
 
       return 0;
 }
