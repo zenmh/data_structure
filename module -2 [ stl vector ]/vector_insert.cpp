@@ -15,12 +15,14 @@ int main()
       // insert a value
       v1.insert(v1.begin() + 3, 111);
       for (int x : v1)
-            cout << x << " ";
+            cout << x << " "; // 1 2 3 111 4 5
+
+      cout << endl;
 
       // insert a vector or multiple value
       v1.insert(v1.begin() + 3, v2.begin(), v2.end());
       for (int x : v1)
-            cout << x << " ";
+            cout << x << " "; // 1 2 3 10 20 30 40 50 4 5
 
       return 0;
 }
