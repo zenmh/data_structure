@@ -8,19 +8,31 @@ int main()
 
       int a[n];
 
-      for (int i = 0; i < n; i++)
+      for (int i = 0; i < n; i++) // O(N)
             cin >> a[i];
 
-      while (q--)
+      sort(a, a + n); // O(NlogN)
+
+      while (q--) // O(Q)
       {
             cin >> x;
             bool flag = false;
+            int l = 0, r = n - 1;
 
-            for (int i = 0; i < n; i++)
-                  if (a[i] == x)
+            while (l <= r) // O(logN)
+            {
+                  int mid = (l + r) / 2;
+
+                  if (a[mid] == x)
                   {
                         flag = true;
+                        break;
                   }
+                  else if (a[mid] > x)
+                        r = --mid;
+                  else
+                        l = ++mid;
+            }
 
             if (flag)
                   cout << "found" << endl;
