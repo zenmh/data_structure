@@ -9,15 +9,15 @@ int main()
 
       long long a[n], pre_sum[n];
 
-      for (int i = 0; i < n; i++)
+      for (int i = 0; i < n; i++) // O(N)
             cin >> a[i];
 
       pre_sum[0] = a[0];
 
-      for (int i = 1; i < n; i++)
+      for (int i = 1; i < n; i++) // O(N)
             pre_sum[i] = a[i] + pre_sum[i - 1];
 
-      while (q--)
+      while (q--) // O(Q)
       {
             long long l, r, sum;
             cin >> l >> r;
