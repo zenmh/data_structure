@@ -55,7 +55,7 @@ int main()
 
       while (1) // 1 is a truethy value
       {
-            cout << "Press 1 To Insert At Tail" << endl
+            cout << "Press 1 To Insert One At Tail" << endl
                  << "Press 2 To Print The Linked List" << endl
                  << "Press 3 To Terminate The Program" << endl;
 
