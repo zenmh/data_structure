@@ -48,7 +48,7 @@ void insert_at_index(Node *&head, int index, int value, int *pt_cnt)
       Node *new_node = new Node(value);
       Node *tmp = head;
 
-      if (index > (*pt_cnt - 1))
+      if (index > *pt_cnt) // size
       {
             cout << "Invalid" << endl;
       }
