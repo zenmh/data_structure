@@ -23,34 +23,60 @@ void insert_at_tail(Node *&head, int value)
             head = new_node;
       else
       {
-            while (tmp->next) // untill tmp->next gonna null
+            while (tmp->next)
                   tmp = tmp->next;
 
             tmp->next = new_node;
       }
 }
 
+void check_duplicate(Node *head)
+{
+      int a[100] = {0};
+      bool flag = false;
+      Node *tmp = head;
+
+      while (tmp)
+      {
+            a[tmp->val]++;
+            tmp = tmp->next;
+      }
+
+      for (int i = 0; i < 100; i++)
+      {
+            if (a[i] > 1)
+            {
+                  flag = true;
+                  break;
+            }
+      }
+
+      if (flag)
+            cout << endl
+                 << "YES" << endl;
+      else
+            cout << endl
+                 << "NO" << endl;
+}
+
 int main()
 {
 
-      int x, cnt = 0;
+      int x;
       Node *head = NULL;
 
       while (1)
       {
+
             cin >> x;
 
             if (x == -1)
                   break;
             else
-            {
                   insert_at_tail(head, x);
-                  cnt++;
-            }
       }
 
-      cout << endl
-           << "Count is: " << cnt << endl;
+      check_duplicate(head);
 
       return 0;
 }
