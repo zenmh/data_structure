@@ -14,7 +14,8 @@ int main()
             cout << *it << " ";
 
       list<int> ml4(ml3); // O(N)
-      for(int val : ml4) cout << val << " ";
+      for (int val : ml4)
+            cout << val << " ";
 
       int n = 5, a[n] = {10, 20, 30, 40, 50};
       list<int> ml5(a, a + n);
