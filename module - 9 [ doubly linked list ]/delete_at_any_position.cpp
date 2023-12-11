@@ -29,14 +29,18 @@ int size(Node *head)
       return cnt;
 }
 
-void delete_the_head(Node *&head)
+void delete_the_head(Node *&head, Node *&tail)
 {
       Node *delete_node = head;
 
       head = head->next;
-      head->prev = NULL;
 
       delete delete_node;
+
+      if (head == NULL)
+            tail = NULL;
+      else
+            head->prev = NULL;
 }
 
 void delete_a_node_at_position(Node *head, int pos)
@@ -54,14 +58,18 @@ void delete_a_node_at_position(Node *head, int pos)
       delete delete_node;
 }
 
-void delete_the_tail(Node *&tail)
+void delete_the_tail(Node *&head, Node *&tail)
 {
       Node *delete_node = tail;
 
       tail = tail->prev;
-      tail->next = NULL;
 
       delete delete_node;
+
+      if (tail == NULL)
+            head = NULL;
+      else
+            tail->next = NULL;
 }
 
 void print_the_ll(Node *head)
@@ -79,24 +87,17 @@ void print_the_ll(Node *head)
 
 int main()
 {
-      int val = 100, pos = 5;
-      Node *head = new Node(10), *a = new Node(20), *b = new Node(30), *c = new Node(40), *tail = c;
-
-      head->next = a;
-      a->prev = head;
-      a->next = b;
-      b->prev = a;
-      b->next = c;
-      c->prev = b;
+      int pos = 0;
+      Node *head = new Node(10), *tail = head;
 
       int n = size(head);
 
       if (pos >= n)
             cout << "Invalid Position To Delete" << endl;
       else if (pos == 0)
-            delete_the_head(head);
+            delete_the_head(head, tail);
       else if (pos == n - 1)
-            delete_the_tail(tail);
+            delete_the_tail(head, tail);
       else
             delete_a_node_at_position(head, pos);
 
