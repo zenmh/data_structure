@@ -26,6 +26,7 @@ void reverse(Node *head, Node *tail)
         i = i->next;
         j = j->prev;
     }
+    swap(i->val, j->val); // corner case for even numbers elements
 }
 
 void print(Node *head)
