@@ -6,11 +6,12 @@ int main()
     int v;
     list<int> ml;
 
-    while(1)
+    while (1)
     {
         cin >> v;
 
-        if (v == -1) break;
+        if (v == -1)
+            break;
 
         ml.push_back(v);
     }
@@ -19,7 +20,7 @@ int main()
     ml.unique();
 
     for (int x : ml)
-    cout << x << " ";
+        cout << x << " ";
 
     return 0;
 }
