@@ -40,8 +40,7 @@ void insert_at_head(Node *&head, Node *&tail, int val)
       }
       else
       {
-             
-            new_node->next = head ;
+            new_node->next = head;
             head->prev = new_node;
 
             head = new_node;
@@ -57,7 +56,7 @@ void insert_at_position(Node *&head, int x, int val)
             tmp = tmp->next;
       }
 
-      new_node->prev = tmp ;
+      new_node->prev = tmp;
       new_node->next = tmp->next;
       tmp->next->prev = new_node;
       tmp->next = new_node;
