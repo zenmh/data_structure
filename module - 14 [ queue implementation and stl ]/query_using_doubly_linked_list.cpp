@@ -5,11 +5,12 @@ class Node
 {
 public:
       int val;
-      Node *next;
+      Node *prev, *next;
 
       Node(int val)
       {
             this->val = val;
+            this->prev = NULL;
             this->next = NULL;
       }
 };
@@ -31,6 +32,7 @@ public:
             }
             else
             {
+                  new_node->prev = tail;
                   tail->next = new_node;
                   tail = new_node;
             }
@@ -45,6 +47,10 @@ public:
             if (!head)
             {
                   tail = NULL;
+            }
+            else
+            {
+                  head->prev = NULL;
             }
 
             delete del_node;
