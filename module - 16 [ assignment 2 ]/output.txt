@@ -1,2 +1,7 @@
-rahim
-karim
+YES
+NO
+YES
+YES
+NO
+YES
+NO
