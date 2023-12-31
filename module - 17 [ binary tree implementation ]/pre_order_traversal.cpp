@@ -19,8 +19,9 @@ void pre_order(Node *root)
 {
       if (!root) // base case
             return;
-
+      // kaj suru
       cout << root->val << " ";
+      // kaj ses
       pre_order(root->left);
       pre_order(root->right);
 }

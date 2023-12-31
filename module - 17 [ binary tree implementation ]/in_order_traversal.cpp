@@ -21,7 +21,9 @@ void in_order(Node *root)
             return;
 
       in_order(root->left);
+      // kaj suru
       cout << root->val << " ";
+      // kaj ses
       in_order(root->right);
 }
 

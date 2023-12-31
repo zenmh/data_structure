@@ -22,7 +22,9 @@ void post_order(Node *root)
 
       post_order(root->left);
       post_order(root->right);
+      // kaj suru
       cout << root->val << " ";
+      // kaj ses
 }
 
 int main()
