@@ -1,25 +1,4 @@
-/************************************************************
-
-    Following is the Binary Tree node structure
-
-    template <typename T>
-    class BinaryTreeNode
-    {
-        public :
-        T data;
-        BinaryTreeNode<T> *left;
-        BinaryTreeNode<T> *right;
-
-        BinaryTreeNode(T data)
-        {
-            this -> data = data;
-            left = NULL;
-            right = NULL;
-        }
-    };
-
-************************************************************/
-
+// Way - 1
 bool isExist(BinaryTreeNode<int> *root, int x)
 {
       queue<BinaryTreeNode<int> *> q;
@@ -50,4 +29,18 @@ bool isExist(BinaryTreeNode<int> *root, int x)
 bool isNodePresent(BinaryTreeNode<int> *root, int x)
 {
       isExist(root, x);
+}
+
+// Way - 2
+bool isNodePresent(BinaryTreeNode<int> *root, int x)
+{
+      if (!root)
+            return false;
+
+      if (root->data == x)
+            return true;
+
+      bool l = isNodePresent(root->left, x), r = isNodePresent(root->right, x);
+
+      return l || r;
 }
