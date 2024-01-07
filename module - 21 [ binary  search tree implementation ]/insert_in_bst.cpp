@@ -56,26 +56,59 @@ Node *take_input()
       return root;
 }
 
-bool search(Node *root, int x) // O(H)
+void insert(Node *&root, int x) // O(H)
 {
       if (!root)
-            return false;
-      if (root->val == x)
-            return true;
+            root = new Node(x);
 
       if (root->val > x)
-            return search(root->left, x);
+      {
+            if (!root->left)
+                  root->left = new Node(x);
+            else
+                  insert(root->left, x);
+      }
       else
-            return search(root->right, x);
+      {
+            if (!root->right)
+                  root->right = new Node(x);
+            else
+                  insert(root->right, x);
+      }
+}
+
+void level_order_traversal(Node *root)
+{
+      queue<Node *> q;
+
+      q.push(root);
+
+      while (!q.empty())
+      {
+            // Step 1 : line theke anbo
+            Node *f = q.front();
+            q.pop();
+
+            // Step 2 : jabotio kaj ses kora
+            cout << f->val << " ";
+
+            // Step 3 : ei node er childrens ke q te diya deay
+            if (f->left)
+                  q.push(f->left);
+            if (f->right)
+                  q.push(f->right);
+      }
 }
 
 int main()
 {
       Node *root = take_input();
-      if (search(root, 35))
-            cout << "Found";
-      else
-            cout << "Not Found";
+
+      insert(root, 22);
+      insert(root, 1);
+      insert(root, 111);
+
+      level_order_traversal(root);
 
       return 0;
 }
