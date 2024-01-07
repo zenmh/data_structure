@@ -59,7 +59,10 @@ Node *take_input()
 void insert(Node *&root, int x) // O(H)
 {
       if (!root)
+      {
             root = new Node(x);
+            return;
+      }
 
       if (root->val > x)
       {
