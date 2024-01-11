@@ -1,17 +1,3 @@
-Asia. = 1
-Cricket = 1
-I = 1
-It = 2
-South = 1
-called = 1
-gentleman. = 1
-in = 2
-is = 1
-love = 1
-much = 1
-night. = 1
-play = 1
-popular = 1
-the = 1
-to = 1
-too = 1
+2 3 4 8 39 56 90 
+0
+1
