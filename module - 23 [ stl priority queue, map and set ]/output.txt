@@ -1,5 +1,3 @@
-Babul 98 9
-Delwar 78 2
-Evan 78 5
-Chan 76 43
-Abir 66 7
+abir 66
+chan 59
+evan 79
